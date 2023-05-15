@@ -1,0 +1,47 @@
+/* 
+    Document   : comments
+    Created on : 19.Tem.2010, 18:14:38
+    Author     : Gökmen Görgen, <gkmngrgn@gmail.com>
+    Description:
+        Comments Styles.
+*/
+
+#content ul.commentlist {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+#content ul.commentlist li {
+    margin-bottom: 5px;
+    padding: 5px 10px;
+    border: 1px solid #CCC;
+}
+
+#content ul.commentlist img {
+    margin-left: 10px;
+    float: right;
+}
+
+small.comment-meta {
+    margin-bottom: 10px;
+    font-size: 10px;
+}
+
+.reply {
+    text-align: right;
+}
+
+#commentform {
+    padding-bottom: 10px;
+}
+
+#commentform p input {
+    border: 1px solid #AAA;
+}
+
+textarea#comment {
+    width: 600px;
+    height: 100px;
+    border: 1px solid #AAA;
+}

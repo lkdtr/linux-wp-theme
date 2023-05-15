@@ -1,0 +1,31 @@
+h2.content-news {
+    margin-bottom: -10px;
+    padding: 10px 10px 0px 10px;
+    font-size: 28px;
+    text-shadow: #CCC 1px 2px 15px;
+}
+
+#content-news-header {
+    margin: 0;
+    padding: 0;
+    background: #EFEFFF;
+    border-bottom: 1px solid #DDD;
+}
+
+#content-news-header p {
+    padding: 3px 5px;
+    text-align: right;
+    font-size: 10px;
+}
+
+#content-news-header p a {
+    margin: 0 5px;
+    padding: 3px 10px;
+    background-color: #DDD;
+    color: #555;
+}
+
+#content-news-header p a:hover {
+    background-color: #CCC;
+    color: #760707;
+}

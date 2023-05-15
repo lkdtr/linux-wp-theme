@@ -1,0 +1,379 @@
+html {
+	background:#000 url(../images/arkaplan.jpg) repeat-x fixed;
+}
+
+body {
+    margin: 0;
+    font-size: 12px;
+    font-family:Verdana, Arial, Helvetica, sans-serif;
+	background:url(../images/adam.png) no-repeat center top fixed;
+}
+
+a {
+    text-decoration: none;
+}
+
+p {
+    margin: 0;
+    padding-bottom: 10px;
+}
+
+p.date {
+    margin: 0;
+    padding: 0;
+    font-size: 10px;
+}
+
+p.warning {
+    padding: 50px;
+    font-size: 16px;
+}
+
+hr {
+    margin: 0;
+}
+
+img {
+    border: none;
+}
+
+img.logo {
+    margin: 0;
+    float: left;
+	padding-left:10px;
+}
+
+img.button {
+    padding: 0 0 5px 0;
+}
+
+ul {
+    padding: 0 5px;
+}
+
+ul.index li, ul.index li ul li {
+	margin: 0;
+	padding: 0;
+}
+
+ul.index, ul.index ul {
+	margin: 0;
+}
+
+ul.news {
+    margin: 0;
+    padding: 0 0 5px 0;
+    font-size: 11px;
+    width: 330px;
+}
+
+ul.news li.other_new {
+    margin: 0;
+    padding: 2px 10px;
+}
+
+ul.news a {
+    color: #0000BE;
+}
+
+ul.news a:hover {
+    color: #000;
+}
+
+ul.news p {
+    margin-bottom: 5px;
+    padding: 0;
+}
+
+h2 {
+	margin: 0 0 10px 0;
+    padding: 20px 0 0 0;
+    color: #760707;
+}
+
+h2 a {
+    color: #760707;
+}
+
+h4 {
+    margin: 0 0 10px 0;
+    color: #760707;
+    font-size: 13px;
+}
+
+h4 a {
+    color: #760707;
+}
+
+span.news_description {
+    margin: 2px 5px 10px 5px;
+    padding: 0;
+    font-size: 11px;
+    font-style: italic;
+    color: #777;
+    background-color: #FFC;
+    border-top: 1px solid #BBB;
+}
+
+.wrapper {
+    margin: 0 auto;
+    width: 760px;
+}
+
+#top {
+	background:url(../images/arkaisik.png);
+	margin:auto;
+	height:116px;
+	width:766px;
+}
+
+#header {
+    padding-top: 0;
+    text-align: right;
+    height: 85px;
+}
+
+#banner {
+	padding-top:11px;
+	padding-right:10px;
+}
+
+#horizontal_menu {
+	background:url(../images/golge.png) left bottom;
+	padding:0 3px 0 3px;
+	height:26px;
+	width:760px;
+}
+
+#page {
+	background:url(../images/golge.png) repeat-y;
+	width:766px;
+	margin:auto;
+    min-height: 580px;
+}
+
+#content, #content-news {
+    background-color: #FFF;
+}
+
+#content {
+    padding: 0 15px;
+}
+
+#content ul {
+	margin: 0 0 10px 30px;
+    list-style-type: circle;
+}
+
+#content>ul {
+	margin: -7px 0 10px 30px;
+}
+
+#content ul li {
+	margin: 0;
+	padding: 3px 0;
+}
+
+#content-news ul {
+    list-style-type: none;
+}
+
+#content-news ul a {
+    color: #000;
+}
+
+#content-news ul.content-news-top {
+    margin: 0 6px 15px 6px;
+    padding: 15px 0 0 0;
+    width: 100%;
+}
+
+#content-news ul.content-news-top li.top {
+    margin: 0;
+    padding: 0;
+    float: left;
+}
+
+#content-news ul.content-news-top li.bottom {
+    margin: 0;
+    padding: 5px;
+    border: 1px solid #CCC;
+    width: 165px;
+    height: 180px;
+}
+
+#content-news ul.content-news-top li.bottom:hover {
+    background-color: #feffe0;
+}
+
+#content-news ul.content-news-top li h4 {
+    margin: 0 0 2px 0;
+    padding: 0;
+    font-size: 11px;
+}
+
+#content-news ul.content-news-top li p {
+    margin-top: 5px;
+    font-size: 9px;
+    text-align: justify;
+}
+
+#content-news li.comments {
+    margin: 0;
+    padding: 2px 5px;
+    position: relative;
+    top: -17px;
+    height: 12px;
+    background-color: #CCC;
+    font-size: 9px;
+}
+
+#content-news li.comments a {
+    color: #444;
+    text-decoration: none;
+}
+
+#content-news p.time {
+    margin: 0;
+    padding: 0;
+    font-size: 9px;
+    font-style: italic;
+}
+
+#navigation {
+    clear: both;
+    border-top: 1px solid #CCC;
+}
+
+#navigation p {
+    margin: 0;
+    padding: 3px;
+    font-size: 10px;
+}
+
+#navigation p a {
+    color: #444;
+}
+
+#navigation p a:hover {
+    color: #000;
+}
+
+#navigation p.next {
+    padding-left: 10px;
+    float: right;
+    border-left: 1px solid #CCC;
+}
+
+#navigation p.previous {
+    padding-right: 10px;
+    float: left;
+    border-right: 1px solid #CCC;
+}
+
+#footer {
+    padding: 5px 0;
+    border-top: 3px solid #C9D7F1;
+    background-color: #D5E4FF;
+    font-size: 11px;
+    clear: both;
+}
+
+#footer a {
+    color: #333;
+}
+
+#footer span {
+    padding: 5px;
+    border-right: 2px solid #C9D7F1;
+}
+
+#footer p.left {
+    margin: 0;
+    padding: 0 5px 0 0;
+    text-align: right;
+    float: right;
+}
+
+#duyuru-kayit {
+    margin: 0;
+    padding: 0 5px 5px 5px;
+    clear: both;
+    border-top: 1px solid #CCC;
+    background-color: #EEE;
+    width:100%;
+}
+
+#google_search {
+    margin: 0;
+    padding: 0 5px 5px 5px;
+    clear: both;
+    border-top: 1px solid #CCC;
+    background-color: #EEE;
+}
+
+#google_search input.text {
+    margin: 10px 5px 5px 7px;
+    border: 1px solid #AAA;
+    width: 200px;
+}
+
+#google_search ul li {
+    margin-right: 15px;
+    display: inline;
+    list-style-type: none;
+}
+
+#other {
+    height: 50px;
+}
+
+#bottom_area {
+    background-color: #FFF;
+}
+
+#with-sidebar {
+	background-color: #FFFFCC;
+    border-bottom: 1px dashed #760707;
+    min-height: 280px;
+}
+
+#what-is-linux {
+	padding: 0 15px;
+	text-align: justify;
+    width: 522px;
+}
+
+#what-is-linux h4 {
+	padding-top: 15px;
+	color: #333;
+	text-shadow:  2px 2px 4px #CCC;
+}
+
+#warning-dialog {
+	margin: 0 20px 10px 20px;
+	padding: 5px;
+	background-color: #FFFFCC;
+	border: 1px dashed #AAA;
+	font-size: 10px;
+	text-align: justify;
+}
+
+#buttons {
+	padding: 5px 10px;
+	width: 200px;
+	float: right;
+}
+
+#right-news {
+	float: right;
+}
+
+/* Kalsın bu böyle, lazım olabilir ;-)
+#other-news {
+}
+*/
+
+.clear {
+	clear:both;
+}

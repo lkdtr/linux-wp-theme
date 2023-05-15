@@ -1,0 +1,18 @@
+AÇIKLAMA
+
+LinuxTema, http://linux.org.tr sitesi için hazırlanmış bir WordPress temasıdır.
+Tema ve PHP altyapısı, Linux Kullanıcıları Derneği üyelerince hazırlanmıştır ve
+-görüşünü bildiren- herkesin ortak beğenisi ve eleştirisiyle yazılmıştır.
+
+Eğer var olan tema veya kod altyapısı ile ilgili bir iyileştirmede veya
+eleştiride bulunmak ve katkı sağlamak istiyorsanız, lütfen http://uye.lkd.org.tr
+sitesine giriş yapıp hata kaydı açınız.
+
+
+BAĞIMLILIKLAR
+
+- Content And Excerpt Word Limit:
+    http://wordpress.org/extend/plugins/content-and-excerpt-word-limit/
+
+- TDO Mini Forms:
+    http://thedeadone.net/software/tdo-forum-wordpress-theme/

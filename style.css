@@ -1,0 +1,20 @@
+/*
+Theme Name: linuxTema
+Theme URI: http://www.linux.org.tr
+Description: LKD web takımı tarafından linux.org.tr için yapılmış temadır.
+Version: 0.4
+Author: LKD Web Takımı
+Author URI: http://www.linux.org.tr
+Tags: linux, türkçe, türkiye, lkd
+License: GPLv3
+
+    Contributors:
+    - Gökmen Görgen, <gokmen.gorgen@linux.org.tr>
+    - Umuthan Uyan, <umuthan.uyan@linux.org.tr>
+    - Mehmet Nedim Şahin, <nedim.sahin@linux.org.tr>
+*/
+
+@import url('css/main.css');
+@import url('css/menu.css');
+@import url('css/news.css');
+@import url('css/comments.css');
