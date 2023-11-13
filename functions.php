@@ -24,6 +24,13 @@ if ( function_exists('register_sidebar') ) {
 }
  
 
+add_theme_support('menus');
+register_nav_menus(array(
+  'menu' => 'Header Menü',
+  'menu_en' => 'Header Menü English',
+));
+
+
 /** @ignore */
 function kubrick_head() {
 	$head = "<style type='text/css'>\n<!--";
