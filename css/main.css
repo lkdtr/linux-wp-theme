@@ -40,7 +40,8 @@ img {
 img.logo {
     margin: 0;
     float: left;
-	padding-left:10px;
+	  padding-left:10px;
+	  width: 150px;
 }
 
 img.button {
@@ -64,7 +65,7 @@ ul.news {
     margin: 0;
     padding: 0 0 5px 0;
     font-size: 11px;
-    width: 330px;
+    max-width: 330px;
 }
 
 ul.news li.other_new {
@@ -117,14 +118,14 @@ span.news_description {
 
 .wrapper {
     margin: 0 auto;
-    width: 760px;
+    max-width: 760px;
 }
 
 #top {
 	background:url(../images/arkaisik.png);
 	margin:auto;
 	height:116px;
-	width:766px;
+	max-width:766px;
 }
 
 #header {
@@ -142,12 +143,12 @@ span.news_description {
 	background:url(../images/golge.png) left bottom;
 	padding:0 3px 0 3px;
 	height:26px;
-	width:760px;
+	max-width:760px;
 }
 
 #page {
 	background:url(../images/golge.png) repeat-y;
-	width:766px;
+	max-width:766px;
 	margin:auto;
     min-height: 580px;
 }
@@ -198,7 +199,7 @@ span.news_description {
     margin: 0;
     padding: 5px;
     border: 1px solid #CCC;
-    width: 165px;
+    max-width: 165px;
     height: 180px;
 }
 
@@ -315,7 +316,7 @@ span.news_description {
 #google_search input.text {
     margin: 10px 5px 5px 7px;
     border: 1px solid #AAA;
-    width: 200px;
+    max-width: 200px;
 }
 
 #google_search ul li {
@@ -341,7 +342,7 @@ span.news_description {
 #what-is-linux {
 	padding: 0 15px;
 	text-align: justify;
-    width: 522px;
+    max-width: 522px;
 }
 
 #what-is-linux h4 {
@@ -361,7 +362,7 @@ span.news_description {
 
 #buttons {
 	padding: 5px 10px;
-	width: 200px;
+	max-width: 200px;
 	float: right;
 }
 
