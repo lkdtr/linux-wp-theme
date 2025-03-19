@@ -20,7 +20,7 @@
     <div id="top">
       <div class="wrapper" id="header">
         <a href="<?php bloginfo('siteurl'); ?>">
-          <img class="logo" src="<?php bloginfo('template_url'); ?>/images/linux-logo.png?v=20250319" />
+          <img class="logo" width="150" src="<?php bloginfo('template_url'); ?>/images/linux-logo.png?v=20250319" />
         </a>
       	<!-- Revive Adserver iFrame Tag - Generated with Revive Adserver v5.3.1 -->
 		<iframe id='af501f86' name='af501f86' src='https://reklam.lkd.org.tr/www/delivery/afr.php?zoneid=1&amp;target=_blank&amp;cb=INSERT_RANDOM_NUMBER_HERE' frameborder='0' scrolling='no' width='468' height='60' allow='autoplay'><a href='https://reklam.lkd.org.tr/www/delivery/ck.php?n=afb55e20&amp;cb=INSERT_RANDOM_NUMBER_HERE' target='_blank'><img src='https://reklam.lkd.org.tr/www/delivery/avw.php?zoneid=1&amp;cb=INSERT_RANDOM_NUMBER_HERE&amp;n=afb55e20' border='0' alt='' /></a></iframe>
