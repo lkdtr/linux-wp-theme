@@ -40,7 +40,8 @@ img {
 img.logo {
     margin: 0;
     float: left;
-	padding-left:10px;
+	  padding-left:10px;
+	  width: 150px;
 }
 
 img.button {
