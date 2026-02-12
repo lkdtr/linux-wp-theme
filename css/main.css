@@ -337,6 +337,11 @@ span.news_description {
     min-height: 280px;
 }
 
+h1 {
+	padding-top: 15px;
+    margin-top: 0;
+}
+
 #what-is-linux {
 	padding: 0 15px;
 	text-align: justify;
