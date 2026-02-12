@@ -98,7 +98,6 @@ h2 a {
 h4 {
     margin: 0 0 10px 0;
     color: #760707;
-    font-size: 13px;
 }
 
 h4 a {
@@ -342,6 +341,19 @@ span.news_description {
 	padding: 0 15px;
 	text-align: justify;
     max-width: 522px;
+}
+
+#what-is-linux h1 {
+	padding-top: 15px;
+    margin-top: 0;
+	color: #333;
+	text-shadow:  2px 2px 4px #CCC;
+}
+
+#what-is-linux h2 {
+	padding-top: 15px;
+	color: #333;
+	text-shadow:  2px 2px 4px #CCC;
 }
 
 #what-is-linux h4 {

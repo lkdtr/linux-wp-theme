@@ -13,13 +13,13 @@
         </div>
 
         <div id="what-is-linux">
-          <h4>Linux Nedir?</h4>
+          <h1>Linux Nedir?</h1>
           <p>Linux, Internet üzerinden haberleşen çok sayıda gönüllü programcının desteğiyle Linus Torvalds tarafından baştan başlanarak geliştirilmiş GNU/Linux işletim sisteminin çekirdeğidir.</p>
 
-          <h4>Özgür Yazılım Nedir?</h4>
+          <h2>Özgür Yazılım Nedir?</h2>
           <p>Yazılım ürünlerinin kişi, kurum ve kuruluşlardan bağımsız olarak geliştirilmesi, kullanılması, dağıtılması ve paylaşılması anlayışı özgür yazılım olarak bilinmektedir. <a href="/linux-nedir">Daha fazla bilgi…</a></p>
 
-          <h4>Nereden Linux Bulabilirim?</h4>
+          <h2>Nereden Linux Bulabilirim?</h2>
           <p>Linux, diğer birçok özgür yazılım ürünü gibi ücretsiz olarak edinilebilmektedir. Çeşitli Linux dağıtımlarının yansılarını Dosya Alanı bölümünü oluşturan FTP sunucumuzda bulabilirsiniz. LKD’nin katıldığı çeşitli fuarlarda, standımızda Linux CD’leri bulabilirsiniz. Bunun yanı sıra CD satan yerlere de başvurabilirsiniz.</p>
         </div>
       </div> <!-- end with-sidebar -->
