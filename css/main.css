@@ -337,7 +337,7 @@ span.news_description {
     min-height: 280px;
 }
 
-h1 {
+#content h1 {
 	padding-top: 15px;
     margin-top: 0;
 }
