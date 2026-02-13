@@ -116,14 +116,14 @@ span.news_description {
 
 .wrapper {
     margin: 0 auto;
-    max-width: 760px;
+    max-width: 1024px;
 }
 
 #top {
 	background:url(../images/arkaisik.png);
 	margin:auto;
 	height:116px;
-	max-width:766px;
+    max-width: 1024px;
 }
 
 #header {
@@ -141,14 +141,14 @@ span.news_description {
 	background:url(../images/golge.png) left bottom;
 	padding:0 3px 0 3px;
 	height:26px;
-	max-width:760px;
+	max-width:1024px;
 }
 
 #page {
 	background:url(../images/golge.png) repeat-y;
-	max-width:766px;
 	margin:auto;
     min-height: 580px;
+    max-width: 1024px;
 }
 
 #content, #content-news {
