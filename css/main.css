@@ -1,11 +1,11 @@
 html {
-	background:#000 url(../images/arkaplan.jpg) repeat-x fixed;
+	background:#000 url(../images/arkaplan.jpg?v2) repeat-x fixed;
 }
 
 body {
     margin: 0;
     font-family:Verdana, Arial, Helvetica, sans-serif;
-    background:url(../images/adam.png) no-repeat center top fixed;
+    background:url(../images/adam.png?v2) no-repeat center top fixed;
 }
 
 a {
@@ -120,10 +120,10 @@ span.news_description {
 }
 
 #top {
-	background:url(../images/arkaisik.png);
 	margin:auto;
 	height:116px;
     max-width: 1024px;
+    padding-top: 50px;
 }
 
 #header {
