@@ -1,0 +1,84 @@
+/* Gutenberg editörünü tema görünümüyle eşleştir */
+
+:root {
+    --color-accent:      #8b1a1a;
+    --color-accent-dark: #6b1010;
+    --color-text:        #222;
+    --color-muted:       #666;
+    --color-border:      #ddd;
+    --color-bg:          #f5f5f5;
+    --color-surface:     #fff;
+    --color-header-bg:   #d9e4f7;
+    --color-highlight:   #fffde7;
+    --font-base: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+    --radius: 4px;
+}
+
+.editor-styles-wrapper {
+    font-family: var(--font-base);
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--color-text);
+    max-width: 760px;
+}
+
+.editor-styles-wrapper a {
+    color: var(--color-accent);
+    text-decoration: none;
+}
+
+.editor-styles-wrapper h2 {
+    color: var(--color-accent);
+    margin: 0 0 0.625rem;
+    padding: 1.25rem 0 0;
+}
+
+.editor-styles-wrapper h4 {
+    color: var(--color-accent);
+    margin: 0 0 0.625rem;
+}
+
+.editor-styles-wrapper blockquote,
+.editor-styles-wrapper .wp-block-quote {
+    border-left: 4px solid var(--color-accent);
+    background-color: var(--color-highlight);
+    padding: 0.75rem 1rem 0.75rem 1.25rem;
+    margin: 1rem 0;
+    border-radius: 0 var(--radius) var(--radius) 0;
+}
+
+.editor-styles-wrapper code {
+    background-color: #f0f0f0;
+    padding: 0.15em 0.4em;
+    border-radius: 3px;
+    font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+    font-size: 0.875em;
+}
+
+.editor-styles-wrapper pre,
+.editor-styles-wrapper .wp-block-code {
+    background-color: #1e1e1e;
+    color: #f8f8f2;
+    padding: 1rem;
+    border-radius: var(--radius);
+    font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+    font-size: 0.875rem;
+    overflow-x: auto;
+}
+
+.editor-styles-wrapper table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+}
+
+.editor-styles-wrapper th,
+.editor-styles-wrapper td {
+    padding: 8px 12px;
+    border: 1px solid var(--color-border);
+}
+
+.editor-styles-wrapper th {
+    background-color: var(--color-header-bg);
+    font-weight: 600;
+}
