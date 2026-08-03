@@ -11,7 +11,6 @@ add_editor_style( 'css/editor.css' );
 
 function linux_wp_theme_scripts() {
     wp_enqueue_script( 'jquery' );
-    wp_enqueue_script( 'linux-menu', get_template_directory_uri() . '/javascript/menu.js', array( 'jquery' ), '1.0', true );
     wp_enqueue_script( 'linux-buttons', get_template_directory_uri() . '/javascript/buttons.js', array( 'jquery' ), '1.0', true );
     wp_enqueue_style( 'linux-blocks', get_template_directory_uri() . '/css/blocks.css', array(), '1.0' );
 }

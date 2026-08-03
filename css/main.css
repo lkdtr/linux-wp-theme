@@ -172,7 +172,8 @@ span.news_description {
     margin: auto;
     max-width: var(--max-width);
     padding-top: 50px;
-    height: 116px;
+    /* Header ve menünün gerçek yüksekliğinin sayfayı aşağı itmesine izin ver. */
+    height: auto;
 }
 
 #header {
@@ -204,6 +205,15 @@ span.news_description {
 
 #content {
     padding: 0 15px;
+}
+
+/*
+ * Normal yazı görselleri içerik sütununu tamamen kaplamasın. Editörde
+ * "Geniş" veya "Tam genişlik" seçilen görseller kendi hizalama kurallarını
+ * korur.
+ */
+#content .entry > .wp-block-image:not(.alignwide):not(.alignfull) {
+    max-width: min(100%, 640px);
 }
 
 #content ul {
