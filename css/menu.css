@@ -2,12 +2,13 @@
     background-color: #c4d3ee;
     border-bottom: 2px solid #9eb3d8;
     max-width: 1024px;
-    padding: 0 4px;
+    margin-top: 8px;
+    padding: 6px 8px;
     display: flex;
     align-items: stretch;
     justify-content: space-between;
     flex-wrap: nowrap;
-    overflow-x: auto;
+    overflow: visible;
 }
 
 /* ─── Primary nav (#nav) ──────────────────────────── */
@@ -20,7 +21,7 @@
     position: relative;
     font-size: 0.8125rem;
     font-weight: 600;
-    line-height: 28px;
+    line-height: 32px;
 }
 
 #nav {
@@ -32,7 +33,7 @@
 
 #nav a {
     display: block;
-    padding: 0 10px;
+    padding: 0 14px;
     color: #333;
     text-decoration: none;
     white-space: nowrap;
@@ -41,10 +42,12 @@
 
 #nav li {
     position: relative;
+    margin-right: 3px;
     border-right: 1px solid #a8bee0;
 }
 
 #nav li:last-child {
+    margin-right: 0;
     border-right: none;
 }
 
@@ -89,6 +92,7 @@
 }
 
 #nav ul li {
+    margin-right: 0;
     border-right: none;
     border-bottom: 1px solid #c0cfe8;
     float: none;
@@ -114,7 +118,7 @@
     display: flex;
     flex: 0 0 auto;
     font-size: 0.75rem;
-    line-height: 28px;
+    line-height: 32px;
     text-align: right;
 }
 
