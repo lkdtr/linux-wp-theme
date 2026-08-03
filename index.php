@@ -24,9 +24,8 @@
         </div>
       </div> <!-- end with-sidebar -->
     <div id="content">
-      <?php $query = new WP_Query( array( 'posts_per_page' => 1 ) ); ?>
-      <?php if ( $query->have_posts() ) : ?>
-        <?php while ( $query->have_posts() ) : $query->the_post(); ?>
+      <?php if ( have_posts() ) : ?>
+        <?php while ( have_posts() ) : the_post(); ?>
           <div <?php post_class() ?> id="post-<?php the_ID(); ?>">
             <h2>
               <a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?> için kalıcı bağlantı"><?php the_title(); ?></a>
@@ -37,7 +36,7 @@
             </div>
           </div>
           <div style="clear: both"></div>
-        <?php endwhile; wp_reset_postdata(); ?>
+        <?php endwhile; ?>
       <?php else : ?>
         <h2>Bulunamadı</h2>
         <p>Üzgünüz, aradığınız şey burada değil.</p>
