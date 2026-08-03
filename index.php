@@ -32,7 +32,11 @@
               <p class="date"><?php the_time('d F Y'); ?></p>
             </h2>
             <div class="entry">
-              <?php the_content('Yazının kalanını okuyun &raquo;'); ?>
+              <?php if ( get_option( 'rss_use_excerpt' ) ) : ?>
+                <?php the_excerpt(); ?>
+              <?php else : ?>
+                <?php the_content( 'Yazının kalanını okuyun &raquo;' ); ?>
+              <?php endif; ?>
             </div>
           </div>
           <div style="clear: both"></div>
