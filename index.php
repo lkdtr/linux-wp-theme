@@ -40,6 +40,9 @@
             </div>
           </div>
           <div style="clear: both"></div>
+          <?php if ( $wp_query->current_post + 1 < $wp_query->post_count ) : ?>
+            <hr class="post-separator">
+          <?php endif; ?>
         <?php endwhile; ?>
       <?php else : ?>
         <h2>Bulunamadı</h2>
