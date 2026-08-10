@@ -207,12 +207,17 @@ span.news_description {
     padding: 0 15px;
 }
 
+#content .post-separator {
+    margin: 1.5rem 0;
+    border-top-color: var(--color-footer-border);
+}
+
 /*
  * Normal yazı görselleri içerik sütununu tamamen kaplamasın. Editörde
  * "Geniş" veya "Tam genişlik" seçilen görseller kendi hizalama kurallarını
  * korur.
  */
-#content .entry > .wp-block-image:not(.alignwide):not(.alignfull) {
+#content .wp-block-image:not(.alignwide):not(.alignfull) {
     max-width: min(100%, 640px);
 }
 
