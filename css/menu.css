@@ -144,3 +144,52 @@
     background-color: #9eb3d8;
     color: #333;
 }
+
+/* ─── Mobile ──────────────────────────────────────── */
+
+@media (max-width: 768px) {
+    #horizontal_menu {
+        max-width: 100%;
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    #nav {
+        flex-wrap: wrap;
+    }
+
+    #nav li {
+        border-right: none;
+        border-bottom: 1px solid #a8bee0;
+    }
+
+    #nav li:last-child {
+        border-bottom: none;
+    }
+
+    #nav ul {
+        position: static;
+        box-shadow: none;
+        border: none;
+        background-color: #cddaf2;
+    }
+
+    #nav ul ul {
+        left: 0;
+    }
+
+    #nav_en,
+    #nav_en ul {
+        float: none;
+        text-align: left;
+    }
+
+    #nav_en {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    #nav_en li {
+        float: none;
+    }
+}

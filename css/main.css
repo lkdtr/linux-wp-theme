@@ -503,3 +503,28 @@ span.news_description {
 .clear {
     clear: both;
 }
+
+/* ─── Mobile (header / logo / banner) ────────────────── */
+
+@media (max-width: 768px) {
+    #top {
+        height: auto;
+        padding-top: 15px;
+    }
+
+    #header {
+        height: auto;
+        padding-bottom: 10px;
+        flex-wrap: wrap;
+    }
+
+    img.logo {
+        float: none;
+        width: 120px;
+        padding-left: 0;
+    }
+
+    #banner {
+        display: none;
+    }
+}
