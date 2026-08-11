@@ -30,16 +30,21 @@
   <p style="padding-bottom: 10px; font-size: 10px; font-style: italic; list-style-type: none;">(Tüm gezegen yazılarını görmek için <a href="http://gezegen.linux.org.tr/">tıklayın.</a>)</p>
   </div>
 
-  <?php if (have_posts()) : ?>
+  <?php
+    $other_news_query = new WP_Query( array(
+      'posts_per_page' => 2,
+      'offset'         => 1,
+    ) );
+  ?>
+  <?php if ( $other_news_query->have_posts() ) : ?>
     <h2>Diğer Haber Başlıkları</h2>
-    <?php query_posts('showposts=2&offset=1'); ?>
     <ul class="news">
-      <?php while (have_posts()) : the_post(); ?>
+      <?php while ( $other_news_query->have_posts() ) : $other_news_query->the_post(); ?>
         <li class="other_new">
           <a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?> için kalıcı bağlantı"><?php the_title(); ?></a>
           <p style="font-size: 9px; margin: 0;">(<?php the_time('d F Y'); ?>)</p>
         </li>
-      <?php endwhile; ?>
+      <?php endwhile; wp_reset_postdata(); ?>
     </ul>
     <p style="padding-bottom: 10px; font-size: 10px; font-style: italic; list-style-type: none;">(Tüm haberleri görmek için <a href="/haberler">tıklayın.</a>)</p>
   <?php endif; ?>

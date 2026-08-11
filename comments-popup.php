@@ -58,20 +58,20 @@ if ( post_password_required($post) ) {  // ve çerez ile eşleşmiyor
 
 <form action="<?php echo get_option('siteurl'); ?>/wp-comments-post.php" method="post" id="commentform">
 <?php if ( $user_ID ) : ?>
-	<p><a href="<?php echo get_option('siteurl'); ?>/wp-admin/profile.php"><?php echo $user_identity; ?></a> olarak giriş yapılmış. <a href="<?php echo wp_logout_url(get_permalink()); ?>" title="Bu hesaptan çıkış yap">Çıkış &raquo;</a></p>
+	<p><a href="<?php echo get_option('siteurl'); ?>/wp-admin/profile.php"><?php echo esc_html( $user_identity ); ?></a> olarak giriş yapılmış. <a href="<?php echo wp_logout_url(get_permalink()); ?>" title="Bu hesaptan çıkış yap">Çıkış &raquo;</a></p>
 <?php else : ?>
 	<p>
-	  <input type="text" name="author" id="author" class="textarea" value="<?php echo $comment_author; ?>" size="28" tabindex="1" />
+	  <input type="text" name="author" id="author" class="textarea" value="<?php echo esc_attr( $comment_author ); ?>" size="28" tabindex="1" />
 	   <label for="author">İsim</label>
 	</p>
 
 	<p>
-	  <input type="text" name="email" id="email" value="<?php echo $comment_author_email; ?>" size="28" tabindex="2" />
+	  <input type="text" name="email" id="email" value="<?php echo esc_attr( $comment_author_email ); ?>" size="28" tabindex="2" />
 	   <label for="email">E-posta</label>
 	</p>
 
 	<p>
-	  <input type="text" name="url" id="url" value="<?php echo $comment_author_url; ?>" size="28" tabindex="3" />
+	  <input type="text" name="url" id="url" value="<?php echo esc_attr( $comment_author_url ); ?>" size="28" tabindex="3" />
 	   <label for="url"><abbr title="Universal Resource Locator">URL</abbr></label>
 	</p>
 <?php endif; ?>
@@ -83,8 +83,8 @@ if ( post_password_required($post) ) {  // ve çerez ile eşleşmiyor
 	</p>
 
 	<p>
-      <input type="hidden" name="comment_post_ID" value="<?php echo $id; ?>" />
-	  <input type="hidden" name="redirect_to" value="<?php echo attribute_escape($_SERVER["REQUEST_URI"]); ?>" />
+      <input type="hidden" name="comment_post_ID" value="<?php echo esc_attr( $id ); ?>" />
+	  <input type="hidden" name="redirect_to" value="<?php echo esc_url( wp_unslash( $_SERVER['REQUEST_URI'] ) ); ?>" />
 	  <input name="submit" type="submit" tabindex="5" value="Say It!" />
 	</p>
 	<?php do_action('comment_form', $post->ID); ?>

@@ -6,7 +6,6 @@
 <ul>
 <?php wp_list_bookmarks(); ?>
 </ul>
-dadada
 </div>
 
 <?php get_footer(); ?>

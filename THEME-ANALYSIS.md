@@ -94,4 +94,53 @@ Template-parts klasörü yok; parçalar doğrudan `include`/`get_template_part` 
 
 ## 9. Yapılan Düzeltmeler
 
-Bu bölüm, kritik sorunlar çözüldükçe güncellenecektir.
+- **Email header injection (`bottom_area.php`)** — nonce (`wp_verify_nonce`) ve
+  `sanitize_email()`/`is_email()` kontrolü eklendi. *(önceki oturumda giderilmiş)*
+- **Deprecated fonksiyonlar** — `query_posts()` → `news.php`'de `WP_Query`'ye,
+  `get_userdatabylogin()` → `archive.php`'de `get_user_by()`'a,
+  `attribute_escape()` → `news_menu.php`'de `esc_attr()`'e çevrildi. *(önceki oturumda giderilmiş)*
+- **`news_inc.php`**: kalan `query_posts()` çağrısı da ayrı bir `WP_Query` nesnesine
+  çevrildi (global sorguyu bozmasın diye), `wp_reset_postdata()` eklendi.
+- **`wp_footer()` hiç çağrılmıyordu** — `footer.php` içine eklendi. Bunun sonucu
+  `wp_enqueue_script('linux-buttons', ..., true)` ile footer'a kaydedilen
+  `javascript/buttons.js` hiçbir sayfada gerçekte basılmıyordu (buton hover efekti
+  çalışmıyordu). Ayrıca admin bar ve `wp_footer` kancasına bağlanan eklentiler de
+  etkileniyordu.
+- **Kapanmayan `<body>`/`<html>` etiketleri** — `footer.php` bu etiketleri hiç
+  kapatmıyordu; sadece `index.php` elle `</body></html>` ekliyordu, diğer tüm
+  şablonlarda (`single.php`, `page.php`, `archive.php`, `search.php`, `404.php`,
+  `news.php`) sayfa hiç kapanmıyordu. Kapanış artık merkezi olarak `footer.php`'de;
+  `index.php`'deki elle eklenmiş tekrar kaldırıldı.
+- **`index.php`**: prodüksiyonda unutulmuş `ini_set('error_reporting', E_ALL);`
+  hata ayıklama satırı kaldırıldı (görüntüleme açıksa ziyaretçilere PHP
+  uyarı/deprecation mesajı sızdırabilirdi).
+- **`comments.php`**: parola korumalı yazı kontrolü elle `$_COOKIE[...]`
+  karşılaştırması yapıyordu (çerez yoksa PHP "undefined array key" uyarısı
+  veriyordu) → çekirdek `post_password_required()` ile değiştirildi. Yorum
+  formundaki `$comment_author`, `$comment_author_email`, `$comment_author_url`,
+  `$user_identity`, `$id` değerleri escape edilmeden basılıyordu → `esc_attr()`/
+  `esc_html()` eklendi.
+- **`comments-popup.php`**: aynı escape eksiklikleri giderildi; deprecated
+  `attribute_escape($_SERVER['REQUEST_URI'])` → `esc_url( wp_unslash( $_SERVER['REQUEST_URI'] ) )`.
+- **`search.php`**: sayfa `#orta`, `#sag`, `.temizle` gibi `css/main.css`'de hiç
+  karşılığı olmayan id/class'lar kullanıyordu; bu yüzden arama sonuçları sayfası
+  temada tamamen stilsiz/bozuk görünüyordu. Sayfa, sitenin geri kalanıyla aynı
+  `#page` / `.wrapper` / `#content` / `#navigation` yapısına çevrildi.
+- **`links.php`**: sayfada görünen başıboş "dadada" test metni kaldırıldı.
+- **`javascript/menu.js`**: hiçbir yerde enqueue edilmiyordu ve mevcut
+  `:focus-within` tabanlı CSS dropdown menüsünün yerini almış eski, sadece
+  hover'a dayalı jQuery kodu — `jquery-1.4.2.min.js` ile aynı gerekçeyle
+  kaldırıldı.
+
+### Kalan / bilinçli olarak dokunulmayan noktalar
+
+- `simplepie.class.php` üçüncü parti bir kütüphane (~380KB); içindeki
+  `$_GET`/`$_SERVER` kullanımı ve PHP 8.4 "deprecated optional parametre"
+  uyarısı kütüphanenin kendi koduna ait, tema tarafından üretilmedi.
+- `archives.php` ve `links.php` dosyalarında `Template Name:` başlığı yok,
+  dolayısıyla WP admin'de bir sayfaya şablon olarak atanamıyorlar; `links.php`
+  ayrıca çekirdekten kaldırılmış Bağlantı Yöneticisi'ne (`wp_list_bookmarks()`)
+  bağımlı. İkisi de şu an fiilen erişilemez durumda; bu bir tasarım/kapsam kararı
+  gerektirdiğinden dokunulmadı.
+- i18n (metinlerin `.pot` ile çevrilebilir hale getirilmesi) kapsamlı bir iş
+  olduğundan bu geçişte ele alınmadı.

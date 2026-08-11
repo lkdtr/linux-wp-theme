@@ -2,15 +2,13 @@
     if ('comments.php' == basename($_SERVER['SCRIPT_FILENAME']))
         die ('Please do not load this page directly. Thanks!');
 
-    if (!empty($post->post_password)) { // if there's a password
-        if ($_COOKIE['wp-postpass_' . COOKIEHASH] != $post->post_password) {  // and it doesn't match the cookie
-            ?>
+    if ( post_password_required() ) { // if there's a password and it doesn't match the cookie
+        ?>
 
-            <p class="nocomments">Bu yazı, parola korumalıdır. Yorumları görüntülemek için lütfen parolanızı giriniz.</p>
+        <p class="nocomments">Bu yazı, parola korumalıdır. Yorumları görüntülemek için lütfen parolanızı giriniz.</p>
 
-            <?php
-            return;
-        }
+        <?php
+        return;
     }
 
     /* This variable is for alternating comment background */
@@ -69,16 +67,16 @@
 
     <form action="<?php echo get_option('siteurl'); ?>/wp-comments-post.php" method="post" id="commentform">
         <?php if ( $user_ID ) : ?>
-        <p><a href="<?php echo get_option('siteurl'); ?>/wp-admin/profile.php"><?php echo $user_identity; ?></a> olarak giriş yapıldı. <a href="<?php echo get_option('siteurl'); ?>/wp-login.php?action=logout" title="Bu hesaptan çıkış yap">Çıkış yap &raquo;</a></p>
+        <p><a href="<?php echo get_option('siteurl'); ?>/wp-admin/profile.php"><?php echo esc_html( $user_identity ); ?></a> olarak giriş yapıldı. <a href="<?php echo get_option('siteurl'); ?>/wp-login.php?action=logout" title="Bu hesaptan çıkış yap">Çıkış yap &raquo;</a></p>
 
         <?php else : ?>
-        <p><input type="text" name="author" id="author" value="<?php echo $comment_author; ?>" size="22" tabindex="1" />
+        <p><input type="text" name="author" id="author" value="<?php echo esc_attr( $comment_author ); ?>" size="22" tabindex="1" />
         <label for="author"><small>İsim, Soyisim (gerekli)</small></label></p>
 
-        <p><input type="text" name="email" id="email" value="<?php echo $comment_author_email; ?>" size="22" tabindex="2" />
+        <p><input type="text" name="email" id="email" value="<?php echo esc_attr( $comment_author_email ); ?>" size="22" tabindex="2" />
         <label for="email"><small>Eposta (yayınlanmayacaktır) (gerekli)</small></label></p>
 
-        <p><input type="text" name="url" id="url" value="<?php echo $comment_author_url; ?>" size="22" tabindex="3" />
+        <p><input type="text" name="url" id="url" value="<?php echo esc_attr( $comment_author_url ); ?>" size="22" tabindex="3" />
         <label for="url"><small>İnternet Sitesi</small></label></p>
 
         <?php endif; ?>
@@ -86,7 +84,7 @@
         <p><textarea name="comment" id="comment"></textarea></p>
 
         <input name="submit" type="submit" id="submit" tabindex="5" value="Gönder" />
-        <input type="hidden" name="comment_post_ID" value="<?php echo $id; ?>" />
+        <input type="hidden" name="comment_post_ID" value="<?php echo esc_attr( $id ); ?>" />
         <?php do_action('comment_form', $post->ID); ?>
 
     </form>
