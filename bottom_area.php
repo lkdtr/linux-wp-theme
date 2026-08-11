@@ -1,16 +1,19 @@
 <div class="wrapper" id="bottom_area">
   <div id="duyuru-kayit">
     <?php
-      if (isset($_POST['email']))
+      if ( isset( $_POST['email'], $_POST['duyuru_nonce'] ) && wp_verify_nonce( sanitize_text_field( wp_unslash( $_POST['duyuru_nonce'] ) ), 'linux_duyuru_kayit' ) )
       {
-        if(filter_var($_POST['email'], FILTER_VALIDATE_EMAIL))
+        $email = sanitize_email( wp_unslash( $_POST['email'] ) );
+
+        if ( is_email( $email ) )
         {
-          mail('lkd-duyuru-request@liste.linux.org.tr',
-               'subscribe',
-               $_POST['email'],
-               'From:' . $_POST['email']
-              );
-          
+          wp_mail(
+            'lkd-duyuru-request@liste.linux.org.tr',
+            'subscribe',
+            $email,
+            array( 'From: ' . $email )
+          );
+
           echo 'Lutfen e-posta kutunuzu kontrol ediniz. ';
           echo '<a href="https://liste.linux.org.tr/kurallar.php">[KURALLAR]</a>';
         }
@@ -25,6 +28,7 @@
         <form action="#bottom_area" method='POST'>
             Duyurulardan haberdar olmak icin, duyuru listemize kaydolun!
             <input type='textbox' length='60' name='email'><a href="https://liste.linux.org.tr/kurallar.php">[KURALLAR]</a>
+            <?php wp_nonce_field( 'linux_duyuru_kayit', 'duyuru_nonce' ); ?>
         </form>
     <?php
         }

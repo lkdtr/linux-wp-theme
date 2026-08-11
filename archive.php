@@ -18,7 +18,7 @@
     		<h2 class="pagetitle"><?php the_time('Y'); ?> için Arşiv</h2>
     	  <?php /* Yazar arşivi ise */ } elseif (is_author()) { ?>
     		<h2 class="pagetitle">Yazar Arşivi</h2>
-     	  <?php /* Sayfalanmış bir arşiv ise */ } elseif (isset($_GET['paged']) && !empty($_GET['paged'])) { ?>
+     	  <?php /* Sayfalanmış bir arşiv ise */ } elseif ( is_paged() ) { ?>
     		<h2 class="pagetitle">Blog Arşivi</h2>
      	  <?php } ?>
      	  
@@ -43,7 +43,7 @@
     		} else if ( is_date() ) { // Tarih arşivi ise
     			echo("<h2>Üzgünüz, bu tarihte yazı yok.</h2>");
     		} else if ( is_author() ) { // Yazar arşivi ise
-    			$userdata = get_userdatabylogin(get_query_var('author_name'));
+    			$userdata = get_user_by('login', get_query_var('author_name'));
     			printf("<h2 class='center'>Üzgünüz, henüz %s tarafından yazılmış herhangi bir yazı yok.</h2>", $userdata->display_name);
     		} else {
     			echo("<h2 class='center'>Herhangi bir yazı bulunamadı.</h2>");

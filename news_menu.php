@@ -2,7 +2,7 @@
   <select name="archive-dropdown" style="float: right; margin: 5px 10px;"
     onChange='document.location.href=this.options[this.selectedIndex].value;'>
     <option value="">
-      <?php echo attribute_escape('Haber Arşivi'); ?>
+      <?php echo esc_attr('Haber Arşivi'); ?>
     </option>
     <?php wp_get_archives('type=monthly&format=option&show_post_count=1'); ?>
   </select>

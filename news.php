@@ -7,41 +7,16 @@
  */
 ?>
 
-<?php
-
-    function curPageURL() {
-       $pageURL = 'http';
-       if ($_SERVER["HTTPS"] == "on") {$pageURL .= "s";}
-
-       $pageURL .= "://";
-
-       if ($_SERVER["SERVER_PORT"] != "80") {
-           $pageURL .= $_SERVER["SERVER_NAME"].":".$_SERVER["SERVER_PORT"].$_SERVER["REQUEST_URI"];
-       } else {
-           $pageURL .= $_SERVER["SERVER_NAME"].$_SERVER["REQUEST_URI"];
-       }
-
-       return $pageURL;
-    }
-
-?>
-
 <?php get_header(); ?>
 
 <?php
 
-    $splitted_url = explode('/', curPageURL());
-    if ($splitted_url[4] == 'page') {
-        $cur_page = absint($splitted_url[5]);
-    } else {
-        $cur_page = 1;
-    }
+    $cur_page = max( 1, absint( get_query_var( 'page' ) ? get_query_var( 'page' ) : get_query_var( 'paged' ) ) );
 
-    $offset = ($cur_page - 1) * 12;
-    $previous = $cur_page - 1;
-    $next = $cur_page + 1;
-
-    query_posts(array('showposts' => '12', 'paged' => $cur_page));
+    $news_query = new WP_Query( array(
+        'posts_per_page' => 12,
+        'paged'          => $cur_page,
+    ) );
 
 ?>
 
@@ -51,7 +26,7 @@
     <div id="content-news">
         <ul class="content-news-top">
           <?php delete_option('wl_readmore_link'); ?>
-          <?php while (have_posts()) : the_post(); ?>
+          <?php while ( $news_query->have_posts() ) : $news_query->the_post(); ?>
           <li class="top">
               <ul>
                   <a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?> için kalıcı bağlantı">
@@ -68,11 +43,15 @@
                   </li>
               </ul>
           </li>
-          <?php endwhile; ?>
+          <?php endwhile; wp_reset_postdata(); ?>
         </ul>
         <div id="navigation">
-            <p class="previous"><?php next_posts_link('&laquo; Önceki Sayfa') ?></p>
-            <p class="next"><?php previous_posts_link('Sonraki Sayfa &raquo;') ?></p>
+            <?php if ( $cur_page < $news_query->max_num_pages ) : ?>
+            <p class="previous"><a href="<?php echo esc_url( get_pagenum_link( $cur_page + 1 ) ); ?>">&laquo; Önceki Sayfa</a></p>
+            <?php endif; ?>
+            <?php if ( $cur_page > 1 ) : ?>
+            <p class="next"><a href="<?php echo esc_url( get_pagenum_link( $cur_page - 1 ) ); ?>">Sonraki Sayfa &raquo;</a></p>
+            <?php endif; ?>
             <div style="clear: both">
         </div>
     </div> <!-- end content -->
