@@ -14,20 +14,20 @@
             array( 'From: ' . $email )
           );
 
-          echo 'Lutfen e-posta kutunuzu kontrol ediniz. ';
-          echo '<a href="https://liste.linux.org.tr/kurallar.php">[KURALLAR]</a>';
+          echo esc_html__( 'Lutfen e-posta kutunuzu kontrol ediniz.', 'linux-wp-theme' ) . ' ';
+          echo '<a href="https://liste.linux.org.tr/kurallar.php">' . esc_html__( '[KURALLAR]', 'linux-wp-theme' ) . '</a>';
         }
         else
         {
-          echo 'Lutfen duzgun bir e-posta adresi giriniz.';
+          echo esc_html__( 'Lutfen duzgun bir e-posta adresi giriniz.', 'linux-wp-theme' );
         }
       }
       else
       {
     ?>
         <form action="#bottom_area" method='POST'>
-            Duyurulardan haberdar olmak icin, duyuru listemize kaydolun!
-            <input type='textbox' length='60' name='email'><a href="https://liste.linux.org.tr/kurallar.php">[KURALLAR]</a>
+            <?php esc_html_e( 'Duyurulardan haberdar olmak icin, duyuru listemize kaydolun!', 'linux-wp-theme' ); ?>
+            <input type='textbox' length='60' name='email'><a href="https://liste.linux.org.tr/kurallar.php"><?php esc_html_e( '[KURALLAR]', 'linux-wp-theme' ); ?></a>
             <?php wp_nonce_field( 'linux_duyuru_kayit', 'duyuru_nonce' ); ?>
         </form>
     <?php
@@ -38,19 +38,19 @@
     <form target="google_window" action="http://www.google.com.tr/custom" method="get">
       <input type="hidden" value="www.linux.org.tr;liste.linux.org.tr;listweb.bilkent.edu.tr" name="domains" />
       <input class="text" type="text" value="" maxlength="255" name="q" />
-      <input type="submit" value="Google'da Ara" name="sa" />
+      <input type="submit" value="<?php esc_attr_e( "Google'da Ara", 'linux-wp-theme' ); ?>" name="sa" />
       <ul>
         <li>
           <input type="radio" value="www.linux.org.tr" checked="checked" name="sitesearch" />
-          <span>Bu sitede arama yap</span>
+          <span><?php esc_html_e( 'Bu sitede arama yap', 'linux-wp-theme' ); ?></span>
         </li>
         <li>
           <input type="radio" value="liste.linux.org.tr" name="sitesearch" />
-          <span>E-posta listelerinde arama yap</span>
+          <span><?php esc_html_e( 'E-posta listelerinde arama yap', 'linux-wp-theme' ); ?></span>
         </li>
         <li>
           <input type="radio" value="listweb.bilkent.edu.tr" name="sitesearch" />
-          <span>Eski listelerde arama yap</span>
+          <span><?php esc_html_e( 'Eski listelerde arama yap', 'linux-wp-theme' ); ?></span>
         </li>
       </ul>
       <input type="hidden" value="pub-8542387655540803" name="client" />

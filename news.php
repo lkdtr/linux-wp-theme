@@ -4,6 +4,7 @@
  *
  * exceprt($limit) fonksiyonunun çalışması için şu eklentiye ihtiyaç var:
  * http://wordpress.org/extend/plugins/content-and-excerpt-word-limit/
+ * (Eklenti aktif değilse WP çekirdeğinin wp_trim_words() fonksiyonuna düşülür.)
  */
 ?>
 
@@ -29,17 +30,25 @@
           <?php while ( $news_query->have_posts() ) : $news_query->the_post(); ?>
           <li class="top">
               <ul>
-                  <a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?> için kalıcı bağlantı">
+                  <a href="<?php the_permalink() ?>" rel="bookmark" title="<?php echo esc_attr( sprintf( __( '%s için kalıcı bağlantı', 'linux-wp-theme' ), get_the_title() ) ); ?>">
                   <li class="bottom">
                       <h4><?php the_title(); ?></h4>
                       <p class="time">(<?php the_time('d F Y'); ?>)</p>
                       <div class="entry">
-                          <p><?php excerpt(25); ?></p>
+                          <p>
+                            <?php
+                              if ( function_exists( 'excerpt' ) ) {
+                                excerpt(25);
+                              } else {
+                                echo esc_html( wp_trim_words( get_the_excerpt(), 25 ) );
+                              }
+                            ?>
+                          </p>
                       </div>
                   </li>
                   </a>
                   <li class="comments">
-                      <?php comments_popup_link('Yorum Yok', '1 Yorum', '% Yorum'); ?>
+                      <?php comments_popup_link( __( 'Yorum Yok', 'linux-wp-theme' ), __( '1 Yorum', 'linux-wp-theme' ), __( '% Yorum', 'linux-wp-theme' ) ); ?>
                   </li>
               </ul>
           </li>
@@ -47,17 +56,16 @@
         </ul>
         <div id="navigation">
             <?php if ( $cur_page < $news_query->max_num_pages ) : ?>
-            <p class="previous"><a href="<?php echo esc_url( get_pagenum_link( $cur_page + 1 ) ); ?>">&laquo; Önceki Sayfa</a></p>
+            <p class="previous"><a href="<?php echo esc_url( get_pagenum_link( $cur_page + 1 ) ); ?>"><?php echo __( '&laquo; Önceki Sayfa', 'linux-wp-theme' ); ?></a></p>
             <?php endif; ?>
             <?php if ( $cur_page > 1 ) : ?>
-            <p class="next"><a href="<?php echo esc_url( get_pagenum_link( $cur_page - 1 ) ); ?>">Sonraki Sayfa &raquo;</a></p>
+            <p class="next"><a href="<?php echo esc_url( get_pagenum_link( $cur_page - 1 ) ); ?>"><?php echo __( 'Sonraki Sayfa &raquo;', 'linux-wp-theme' ); ?></a></p>
             <?php endif; ?>
-            <div style="clear: both">
+            <div style="clear: both"></div>
         </div>
-    </div> <!-- end content -->
+    </div> <!-- end content-news -->
   </div> <!-- end wrapper -->
 
   <?php include 'bottom_area.php'; ?>
   <?php get_footer(); ?>
-  </div>
 </div>

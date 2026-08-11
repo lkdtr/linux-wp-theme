@@ -10,7 +10,7 @@
 				<p class="attachment"><a href="<?php echo wp_get_attachment_url($post->ID); ?>"><?php echo wp_get_attachment_image( $post->ID, 'medium' ); ?></a></p>
 				<div class="caption"><?php if ( !empty($post->post_excerpt) ) the_excerpt(); // "başlık" ?></div>
 
-				<?php the_content('<p class="serif">Yazının tamamını okuyun &raquo;</p>'); ?>
+				<?php the_content( __( '<p class="serif">Yazının tamamını okuyun &raquo;</p>', 'linux-wp-theme' ) ); ?>
 
 				<div class="navigation">
 					<div class="alignleft"><?php previous_image_link() ?></div>
@@ -20,28 +20,35 @@
 
 				<p class="postmetadata alt">
 					<small>
-						Bu girdi <?php the_time('l, d F Y') ?>, <?php the_time() ?> tarihinde
-						<?php the_category(', ') ?> kategorisi altında yayınlandı.
+						<?php
+							/* translators: 1: yayın tarihi, 2: yayın saati */
+							printf(
+								esc_html__( 'Bu girdi %1$s, %2$s tarihinde', 'linux-wp-theme' ),
+								esc_html( get_the_time( 'l, d F Y' ) ),
+								esc_html( get_the_time() )
+							);
+						?>
+						<?php the_category(', ') ?> <?php esc_html_e( 'kategorisi altında yayınlandı.', 'linux-wp-theme' ); ?>
 						<?php the_taxonomies(); ?>
-						Bu girdiye yapılacak yorumlardan haberdar olmak için <?php post_comments_feed_link('RSS 2.0'); ?> beslemesini kullanabilirsiniz.
+						<?php esc_html_e( 'Bu girdiye yapılacak yorumlardan haberdar olmak için', 'linux-wp-theme' ); ?> <?php post_comments_feed_link( __( 'RSS 2.0', 'linux-wp-theme' ) ); ?> <?php esc_html_e( 'beslemesini kullanabilirsiniz.', 'linux-wp-theme' ); ?>
 
 						<?php if (('open' == $post-> comment_status) && ('open' == $post->ping_status)) {
 							// Yorumlar ve geri izlemeler açık ?>
-              <a href="#respond">Yorum yapabilirsiniz</a>, veya kendi sitenizden <a href="<?php trackback_url(); ?>" rel="trackback">geri izleme</a> yapabilirsiniz.
+              <a href="#respond"><?php esc_html_e( 'Yorum yapabilirsiniz', 'linux-wp-theme' ); ?></a>, <?php esc_html_e( 'veya kendi sitenizden', 'linux-wp-theme' ); ?> <a href="<?php trackback_url(); ?>" rel="trackback"><?php esc_html_e( 'geri izleme', 'linux-wp-theme' ); ?></a> <?php esc_html_e( 'yapabilirsiniz.', 'linux-wp-theme' ); ?>
 
 						<?php } elseif (!('open' == $post-> comment_status) && ('open' == $post->ping_status)) {
 							// Sadece geri izlemeler açık ?>
-							Yorum yapma şimdilik kapalı, fakat kendi sitenizden <a href="<?php trackback_url(); ?> " rel="trackback">geri izleme</a> yapabilirsiniz.
+							<?php esc_html_e( 'Yorum yapma şimdilik kapalı, fakat kendi sitenizden', 'linux-wp-theme' ); ?> <a href="<?php trackback_url(); ?>" rel="trackback"><?php esc_html_e( 'geri izleme', 'linux-wp-theme' ); ?></a> <?php esc_html_e( 'yapabilirsiniz.', 'linux-wp-theme' ); ?>
 
 						<?php } elseif (('open' == $post-> comment_status) && !('open' == $post->ping_status)) {
 							// Yorum yapma açık, ping kapalı ?>
-							Sona gidip yorum yapabilirsiniz. Pingleme şimdilik kapalı.
+							<?php esc_html_e( 'Sona gidip yorum yapabilirsiniz. Pingleme şimdilik kapalı.', 'linux-wp-theme' ); ?>
 
 						<?php } elseif (!('open' == $post-> comment_status) && !('open' == $post->ping_status)) {
 							// Ne yorum yapma ne de pingleme açık ?>
-							Yorum yapma ve pingleme kapalı.
+							<?php esc_html_e( 'Yorum yapma ve pingleme kapalı.', 'linux-wp-theme' ); ?>
 
-						<?php } edit_post_link('Girdiyi düzenleyin','','.'); ?>
+						<?php } edit_post_link( __( 'Girdiyi düzenleyin', 'linux-wp-theme' ), '', '.' ); ?>
 
 					</small>
 				</p>
@@ -54,7 +61,7 @@
 
 	<?php endwhile; else: ?>
 
-		<p>Üzgünüz, kriterlerinizle eşleşen ek bulunamadı.</p>
+		<p><?php esc_html_e( 'Üzgünüz, kriterlerinizle eşleşen ek bulunamadı.', 'linux-wp-theme' ); ?></p>
 
 <?php endif; ?>
 

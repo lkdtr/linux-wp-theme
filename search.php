@@ -7,32 +7,32 @@
 
       <?php if (have_posts()) : ?>
 
-        <h2 class="pagetitle">Arama Sonuçları</h2>
+        <h2 class="pagetitle"><?php esc_html_e( 'Arama Sonuçları', 'linux-wp-theme' ); ?></h2>
 
         <div id="navigation">
-          <p class="previous"><?php next_posts_link('&laquo; Eski Yazılar') ?></p>
-          <p class="next"><?php previous_posts_link('Yeni Yazılar &raquo;') ?></p>
+          <p class="previous"><?php next_posts_link( __( '&laquo; Eski Yazılar', 'linux-wp-theme' ) ) ?></p>
+          <p class="next"><?php previous_posts_link( __( 'Yeni Yazılar &raquo;', 'linux-wp-theme' ) ) ?></p>
         </div>
 
         <?php while (have_posts()) : the_post(); ?>
 
           <div <?php post_class() ?>>
-            <h3 id="post-<?php the_ID(); ?>"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?> için Kalıcı Bağlantı"><?php the_title(); ?></a></h3>
+            <h3 id="post-<?php the_ID(); ?>"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php echo esc_attr( sprintf( __( '%s için Kalıcı Bağlantı', 'linux-wp-theme' ), get_the_title() ) ); ?>"><?php the_title(); ?></a></h3>
             <p class="time"><?php the_time('l, j F Y') ?></p>
 
-            <p class="postmetadata"><?php the_tags('Etiketler: ', ', ', '<br />'); ?> Kategori: <?php the_category(', ') ?> | <?php edit_post_link('Düzenle', '', ' | '); ?>  <?php comments_popup_link('Yorum Yok &#187;', '1 Yorum &#187;', '% Yorum &#187;'); ?></p>
+            <p class="postmetadata"><?php the_tags( __( 'Etiketler: ', 'linux-wp-theme' ), ', ', '<br />'); ?> <?php esc_html_e( 'Kategori:', 'linux-wp-theme' ); ?> <?php the_category(', ') ?> | <?php edit_post_link( __( 'Düzenle', 'linux-wp-theme' ), '', ' | '); ?>  <?php comments_popup_link( __( 'Yorum Yok &#187;', 'linux-wp-theme' ), __( '1 Yorum &#187;', 'linux-wp-theme' ), __( '% Yorum &#187;', 'linux-wp-theme' ) ); ?></p>
           </div>
 
         <?php endwhile; ?>
 
         <div id="navigation">
-          <p class="previous"><?php next_posts_link('&laquo; Eski Yazılar') ?></p>
-          <p class="next"><?php previous_posts_link('Yeni Yazılar &raquo;') ?></p>
+          <p class="previous"><?php next_posts_link( __( '&laquo; Eski Yazılar', 'linux-wp-theme' ) ) ?></p>
+          <p class="next"><?php previous_posts_link( __( 'Yeni Yazılar &raquo;', 'linux-wp-theme' ) ) ?></p>
         </div>
 
       <?php else : ?>
 
-        <h2 class="pagetitle">Aradığınız ifadeyi içeren hiç yazı bulunamadı.</h2>
+        <h2 class="pagetitle"><?php esc_html_e( 'Aradığınız ifadeyi içeren hiç yazı bulunamadı.', 'linux-wp-theme' ); ?></h2>
         <?php get_search_form(); ?>
 
       <?php endif; ?>

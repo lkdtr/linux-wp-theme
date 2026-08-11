@@ -5,7 +5,7 @@
     if ( post_password_required() ) { // if there's a password and it doesn't match the cookie
         ?>
 
-        <p class="nocomments">Bu yazı, parola korumalıdır. Yorumları görüntülemek için lütfen parolanızı giriniz.</p>
+        <p class="nocomments"><?php esc_html_e( 'Bu yazı, parola korumalıdır. Yorumları görüntülemek için lütfen parolanızı giriniz.', 'linux-wp-theme' ); ?></p>
 
         <?php
         return;
@@ -19,7 +19,7 @@
 
 <div id="comments">
 <?php if (have_comments()) : ?>
-    <h3 id="comments">&#8220;<?php the_title(); ?>&#8221; için <?php comments_number('Yorum Yok', '1 Yorum', '% Yorum' );?></h3>
+    <h3 id="comments">&#8220;<?php the_title(); ?>&#8221; <?php esc_html_e( 'için', 'linux-wp-theme' ); ?> <?php comments_number( __( 'Yorum Yok', 'linux-wp-theme' ), __( '1 Yorum', 'linux-wp-theme' ), __( '% Yorum', 'linux-wp-theme' ) );?></h3>
 
     <ul class="commentlist">
 
@@ -32,10 +32,10 @@
             <p><?php comment_text() ?></p>
 
             <?php if ($comment->comment_approved == '0') : ?>
-            <em>(Yorumunuz onaylandıktan sonra yayınlanacaktır.)</em>
+            <em>(<?php esc_html_e( 'Yorumunuz onaylandıktan sonra yayınlanacaktır.', 'linux-wp-theme' ); ?>)</em>
             <?php endif; ?>
 
-            <?php edit_comment_link('Düzenle','',''); ?>
+            <?php edit_comment_link( __( 'Düzenle', 'linux-wp-theme' ), '', '' ); ?>
         </li>
 
     <?php /* Changes every other comment to a different class */
@@ -60,30 +60,37 @@
 
 <?php if ('open' == $post->comment_status) : ?>
 
-    <h3 id="respond">Yorum Yazın</h3>
+    <h3 id="respond"><?php esc_html_e( 'Yorum Yazın', 'linux-wp-theme' ); ?></h3>
     <?php if ( get_option('comment_registration') && !$user_ID ) : ?>
-        <p>Yorum yazmak için <a href="<?php echo get_option('siteurl'); ?>/wp-login.php?redirect_to=<?php the_permalink(); ?>">giriş yapmalısınız</a>.</p>
+        <p>
+          <?php esc_html_e( 'Yorum yazmak için', 'linux-wp-theme' ); ?>
+          <a href="<?php echo get_option('siteurl'); ?>/wp-login.php?redirect_to=<?php the_permalink(); ?>"><?php esc_html_e( 'giriş yapmalısınız', 'linux-wp-theme' ); ?></a>.
+        </p>
     <?php else : ?>
 
     <form action="<?php echo get_option('siteurl'); ?>/wp-comments-post.php" method="post" id="commentform">
         <?php if ( $user_ID ) : ?>
-        <p><a href="<?php echo get_option('siteurl'); ?>/wp-admin/profile.php"><?php echo esc_html( $user_identity ); ?></a> olarak giriş yapıldı. <a href="<?php echo get_option('siteurl'); ?>/wp-login.php?action=logout" title="Bu hesaptan çıkış yap">Çıkış yap &raquo;</a></p>
+        <p>
+          <a href="<?php echo get_option('siteurl'); ?>/wp-admin/profile.php"><?php echo esc_html( $user_identity ); ?></a>
+          <?php esc_html_e( 'olarak giriş yapıldı.', 'linux-wp-theme' ); ?>
+          <a href="<?php echo get_option('siteurl'); ?>/wp-login.php?action=logout" title="<?php esc_attr_e( 'Bu hesaptan çıkış yap', 'linux-wp-theme' ); ?>"><?php echo __( 'Çıkış yap &raquo;', 'linux-wp-theme' ); ?></a>
+        </p>
 
         <?php else : ?>
         <p><input type="text" name="author" id="author" value="<?php echo esc_attr( $comment_author ); ?>" size="22" tabindex="1" />
-        <label for="author"><small>İsim, Soyisim (gerekli)</small></label></p>
+        <label for="author"><small><?php esc_html_e( 'İsim, Soyisim (gerekli)', 'linux-wp-theme' ); ?></small></label></p>
 
         <p><input type="text" name="email" id="email" value="<?php echo esc_attr( $comment_author_email ); ?>" size="22" tabindex="2" />
-        <label for="email"><small>Eposta (yayınlanmayacaktır) (gerekli)</small></label></p>
+        <label for="email"><small><?php esc_html_e( 'Eposta (yayınlanmayacaktır) (gerekli)', 'linux-wp-theme' ); ?></small></label></p>
 
         <p><input type="text" name="url" id="url" value="<?php echo esc_attr( $comment_author_url ); ?>" size="22" tabindex="3" />
-        <label for="url"><small>İnternet Sitesi</small></label></p>
+        <label for="url"><small><?php esc_html_e( 'İnternet Sitesi', 'linux-wp-theme' ); ?></small></label></p>
 
         <?php endif; ?>
 
         <p><textarea name="comment" id="comment"></textarea></p>
 
-        <input name="submit" type="submit" id="submit" tabindex="5" value="Gönder" />
+        <input name="submit" type="submit" id="submit" tabindex="5" value="<?php esc_attr_e( 'Gönder', 'linux-wp-theme' ); ?>" />
         <input type="hidden" name="comment_post_ID" value="<?php echo esc_attr( $id ); ?>" />
         <?php do_action('comment_form', $post->ID); ?>
 

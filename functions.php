@@ -1,5 +1,11 @@
 <?php
 
+load_theme_textdomain( 'linux-wp-theme', get_template_directory() . '/languages' );
+
+// links.php şablonu wp_list_bookmarks() kullanıyor; WP 3.5'ten beri varsayılan
+// olarak kapalı olan Bağlantı Yöneticisi'ni bu tema için yeniden etkinleştir.
+add_filter( 'pre_option_link_manager_enabled', '__return_true' );
+
 add_theme_support( 'title-tag' );
 add_theme_support( 'html5', array( 'search-form', 'comment-form', 'comment-list', 'gallery', 'caption' ) );
 add_theme_support( 'automatic-feed-links' );
@@ -8,6 +14,11 @@ add_theme_support( 'wp-block-styles' );
 add_theme_support( 'responsive-embeds' );
 add_theme_support( 'editor-styles' );
 add_editor_style( 'css/editor.css' );
+
+// Anasayfa yazı listesinde küçük öne çıkan görsel gösterebilmek için.
+add_theme_support( 'post-thumbnails' );
+set_post_thumbnail_size( 120, 120, true );
+add_image_size( 'linux-entry-thumb', 120, 120, true );
 
 function linux_wp_theme_scripts() {
     wp_enqueue_script( 'jquery' );
@@ -41,6 +52,6 @@ if ( function_exists( 'register_sidebar' ) ) {
 
 add_theme_support( 'menus' );
 register_nav_menus( array(
-    'menu'    => 'Header Menü',
-    'menu_en' => 'Header Menü English',
+    'menu'    => __( 'Header Menü', 'linux-wp-theme' ),
+    'menu_en' => __( 'Header Menü English', 'linux-wp-theme' ),
 ) );
