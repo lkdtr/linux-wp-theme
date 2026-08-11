@@ -1,0 +1,502 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR LKD Web Takımı
+# This file is distributed under the same license as the linuxTema package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: linuxTema 0.4\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-08-11 09:14+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: 404.php:8
+msgid "Üzgünüz, aradığınız sayfa bulunamadı!"
+msgstr ""
+
+#: 404.php:9
+msgid ""
+"Lütfen girdiğiniz bağlantı adresini kontrol edin veya aşağıda yer alan arama "
+"bölümünden arama yapınız."
+msgstr ""
+
+#: archive.php:10
+msgid "kategorisi için Arşiv"
+msgstr ""
+
+#: archive.php:12
+msgid "olarak etiketlenmiş yazılar"
+msgstr ""
+
+#: archive.php:14 archive.php:16 archive.php:18
+msgid "için Arşiv"
+msgstr ""
+
+#: archive.php:20
+msgid "Yazar Arşivi"
+msgstr ""
+
+#: archive.php:22
+msgid "Blog Arşivi"
+msgstr ""
+
+#: archive.php:27 index.php:31 news.php:33
+#, php-format
+msgid "%s için kalıcı bağlantı"
+msgstr ""
+
+#: archive.php:34 comments.php:38 search.php:23
+msgid "Düzenle"
+msgstr ""
+
+#: archive.php:34 search.php:23
+msgid "Yorum Yok &#187;"
+msgstr ""
+
+#: archive.php:34 search.php:23
+msgid "1 Yorum &#187;"
+msgstr ""
+
+#: archive.php:34 search.php:23
+msgid "% Yorum &#187;"
+msgstr ""
+
+#: archive.php:43
+#, php-format
+msgid "Üzgünüz, %s kategorisinde henüz yazı yok."
+msgstr ""
+
+#: archive.php:45
+msgid "Üzgünüz, bu tarihte yazı yok."
+msgstr ""
+
+#: archive.php:49
+#, php-format
+msgid "Üzgünüz, henüz %s tarafından yazılmış herhangi bir yazı yok."
+msgstr ""
+
+#: archive.php:51
+msgid "Herhangi bir yazı bulunamadı."
+msgstr ""
+
+#: archives.php:14
+msgid "Aylara göre arşiv:"
+msgstr ""
+
+#: archives.php:19
+msgid "Kategorilere göre Arşiv:"
+msgstr ""
+
+#: bottom_area.php:17
+msgid "Lutfen e-posta kutunuzu kontrol ediniz."
+msgstr ""
+
+#: bottom_area.php:18 bottom_area.php:30
+msgid "[KURALLAR]"
+msgstr ""
+
+#: bottom_area.php:22
+msgid "Lutfen duzgun bir e-posta adresi giriniz."
+msgstr ""
+
+#: bottom_area.php:29
+msgid "Duyurulardan haberdar olmak icin, duyuru listemize kaydolun!"
+msgstr ""
+
+#: bottom_area.php:41
+msgid "Google'da Ara"
+msgstr ""
+
+#: bottom_area.php:45
+msgid "Bu sitede arama yap"
+msgstr ""
+
+#: bottom_area.php:49
+msgid "E-posta listelerinde arama yap"
+msgstr ""
+
+#: bottom_area.php:53
+msgid "Eski listelerde arama yap"
+msgstr ""
+
+#: comments-popup.php:4
+msgid "için yapılan yorumlar"
+msgstr ""
+
+#: comments-popup.php:23
+msgid "Yorumlar"
+msgstr ""
+
+#: comments-popup.php:26
+msgid "Bu yazıya yapılan yorumlar için"
+msgstr ""
+
+#: comments-popup.php:26
+msgid "beslemesi."
+msgstr ""
+
+#: comments-popup.php:31
+msgid "Bu yazıya geri izleme yapmak için"
+msgstr ""
+
+#: comments-popup.php:31
+msgid "adresi:"
+msgstr ""
+
+#: comments-popup.php:50
+msgid "Yorum"
+msgstr ""
+
+#: comments-popup.php:50
+msgid "Geri izleme"
+msgstr ""
+
+#: comments-popup.php:50
+msgid "Pingback"
+msgstr ""
+
+#: comments-popup.php:50
+msgid "tarafından"
+msgstr ""
+
+#: comments-popup.php:56
+msgid "Henüz yorum yapılmamış."
+msgstr ""
+
+#: comments-popup.php:60
+msgid "Yorum Yapın"
+msgstr ""
+
+#: comments-popup.php:61
+msgid "E-posta adresi yayımlanmaz, izin verilen"
+msgstr ""
+
+#: comments-popup.php:61
+msgid "kodları:"
+msgstr ""
+
+#: comments-popup.php:67
+msgid "olarak giriş yapılmış."
+msgstr ""
+
+#: comments-popup.php:68 comments.php:76
+msgid "Bu hesaptan çıkış yap"
+msgstr ""
+
+#: comments-popup.php:68
+msgid "Çıkış &raquo;"
+msgstr ""
+
+#: comments-popup.php:73
+msgid "İsim"
+msgstr ""
+
+#: comments-popup.php:78
+msgid "E-posta"
+msgstr ""
+
+#: comments-popup.php:88
+msgid "Yorumunuz"
+msgstr ""
+
+#: comments-popup.php:96
+msgid "Say It!"
+msgstr ""
+
+#: comments-popup.php:101
+msgid "Üzgünüz, yorum formu şu an için kapalı."
+msgstr ""
+
+#: comments-popup.php:106
+msgid "Bu pencereyi kapat."
+msgstr ""
+
+#: comments-popup.php:112
+msgid "Üzgünüz, kriterinizle eşleşen yazı yok."
+msgstr ""
+
+#: comments-popup.php:116
+msgid "Altyapı,"
+msgstr ""
+
+#: comments-popup.php:116
+msgid "WordPress'in desteğiyle, kişisel yayımlama platformu"
+msgstr ""
+
+#: comments-popup.php:116
+msgid "WordPress Türkiye"
+msgstr ""
+
+#: comments.php:8
+msgid ""
+"Bu yazı, parola korumalıdır. Yorumları görüntülemek için lütfen parolanızı "
+"giriniz."
+msgstr ""
+
+#: comments.php:22
+msgid "için"
+msgstr ""
+
+#: comments.php:22 news.php:51
+msgid "Yorum Yok"
+msgstr ""
+
+#: comments.php:22 news.php:51
+msgid "1 Yorum"
+msgstr ""
+
+#: comments.php:22 news.php:51
+msgid "% Yorum"
+msgstr ""
+
+#: comments.php:35
+msgid "Yorumunuz onaylandıktan sonra yayınlanacaktır."
+msgstr ""
+
+#: comments.php:63
+msgid "Yorum Yazın"
+msgstr ""
+
+#: comments.php:66
+msgid "Yorum yazmak için"
+msgstr ""
+
+#: comments.php:67
+msgid "giriş yapmalısınız"
+msgstr ""
+
+#: comments.php:75
+msgid "olarak giriş yapıldı."
+msgstr ""
+
+#: comments.php:76
+msgid "Çıkış yap &raquo;"
+msgstr ""
+
+#: comments.php:81
+msgid "İsim, Soyisim (gerekli)"
+msgstr ""
+
+#: comments.php:84
+msgid "Eposta (yayınlanmayacaktır) (gerekli)"
+msgstr ""
+
+#: comments.php:87
+msgid "İnternet Sitesi"
+msgstr ""
+
+#: comments.php:93
+msgid "Gönder"
+msgstr ""
+
+#: footer.php:3
+msgid "Daha İyi Bir Web Deneyimi İçin Firefox Kullanın"
+msgstr ""
+
+#: footer.php:4
+msgid "Site Alt Yapısı Olarak WordPress Kullanılmaktadır."
+msgstr ""
+
+#: functions.php:33
+msgid "Sidebar Area 1"
+msgstr ""
+
+#: functions.php:42
+msgid "Footer Area"
+msgstr ""
+
+#: functions.php:44
+msgid "An optional widget area for your site footer"
+msgstr ""
+
+#: functions.php:55
+msgid "Header Menü"
+msgstr ""
+
+#: functions.php:56
+msgid "Header Menü English"
+msgstr ""
+
+#: image.php:13
+msgid "<p class=\"serif\">Yazının tamamını okuyun &raquo;</p>"
+msgstr ""
+
+#: image.php:26
+#, php-format
+msgid "Bu girdi %1$s, %2$s tarihinde"
+msgstr ""
+
+#: image.php:31
+msgid "kategorisi altında yayınlandı."
+msgstr ""
+
+#: image.php:33
+msgid "Bu girdiye yapılacak yorumlardan haberdar olmak için"
+msgstr ""
+
+#: image.php:33
+msgid "RSS 2.0"
+msgstr ""
+
+#: image.php:33
+msgid "beslemesini kullanabilirsiniz."
+msgstr ""
+
+#: image.php:37
+msgid "Yorum yapabilirsiniz"
+msgstr ""
+
+#: image.php:37
+msgid "veya kendi sitenizden"
+msgstr ""
+
+#: image.php:37 image.php:41
+msgid "geri izleme"
+msgstr ""
+
+#: image.php:37 image.php:41
+msgid "yapabilirsiniz."
+msgstr ""
+
+#: image.php:41
+msgid "Yorum yapma şimdilik kapalı, fakat kendi sitenizden"
+msgstr ""
+
+#: image.php:45
+msgid "Sona gidip yorum yapabilirsiniz. Pingleme şimdilik kapalı."
+msgstr ""
+
+#: image.php:49
+msgid "Yorum yapma ve pingleme kapalı."
+msgstr ""
+
+#: image.php:51
+msgid "Girdiyi düzenleyin"
+msgstr ""
+
+#: image.php:64
+msgid "Üzgünüz, kriterlerinizle eşleşen ek bulunamadı."
+msgstr ""
+
+#: index.php:7 index.php:13
+msgid "Linux Nedir?"
+msgstr ""
+
+#: index.php:8
+msgid "Dağıtımlar Kılavuzu"
+msgstr ""
+
+#: index.php:9
+msgid "Yardım"
+msgstr ""
+
+#: index.php:14
+msgid ""
+"Linux, Internet üzerinden haberleşen çok sayıda gönüllü programcının "
+"desteğiyle Linus Torvalds tarafından baştan başlanarak geliştirilmiş GNU/"
+"Linux işletim sisteminin çekirdeğidir."
+msgstr ""
+
+#: index.php:16
+msgid "Özgür Yazılım Nedir?"
+msgstr ""
+
+#: index.php:18
+msgid ""
+"Yazılım ürünlerinin kişi, kurum ve kuruluşlardan bağımsız olarak "
+"geliştirilmesi, kullanılması, dağıtılması ve paylaşılması anlayışı özgür "
+"yazılım olarak bilinmektedir."
+msgstr ""
+
+#: index.php:19
+msgid "Daha fazla bilgi…"
+msgstr ""
+
+#: index.php:22
+msgid "Nereden Linux Bulabilirim?"
+msgstr ""
+
+#: index.php:23
+msgid ""
+"Linux, diğer birçok özgür yazılım ürünü gibi ücretsiz olarak "
+"edinilebilmektedir. Çeşitli Linux dağıtımlarının yansılarını Dosya Alanı "
+"bölümünü oluşturan FTP sunucumuzda bulabilirsiniz. LKD’nin katıldığı çeşitli "
+"fuarlarda, standımızda Linux CD’leri bulabilirsiniz. Bunun yanı sıra CD "
+"satan yerlere de başvurabilirsiniz."
+msgstr ""
+
+#: index.php:43
+msgid "Yazının kalanını okuyun &raquo;"
+msgstr ""
+
+#: index.php:53
+msgid "Bulunamadı"
+msgstr ""
+
+#: index.php:54
+msgid "Üzgünüz, aradığınız şey burada değil."
+msgstr ""
+
+#: links.php:12
+msgid "Bağlantılar:"
+msgstr ""
+
+#: news.php:59
+msgid "&laquo; Önceki Sayfa"
+msgstr ""
+
+#: news.php:62
+msgid "Sonraki Sayfa &raquo;"
+msgstr ""
+
+#: news_menu.php:5
+msgid "Haber Arşivi"
+msgstr ""
+
+#: news_menu.php:9
+msgid "Haberler"
+msgstr ""
+
+#: news_menu.php:11
+msgid "Yeni Haber Gir"
+msgstr ""
+
+#: news_menu.php:12
+msgid "Tüm Haberleri Gör"
+msgstr ""
+
+#: search.php:10
+msgid "Arama Sonuçları"
+msgstr ""
+
+#: search.php:13 search.php:29
+msgid "&laquo; Eski Yazılar"
+msgstr ""
+
+#: search.php:14 search.php:30
+msgid "Yeni Yazılar &raquo;"
+msgstr ""
+
+#: search.php:20
+#, php-format
+msgid "%s için Kalıcı Bağlantı"
+msgstr ""
+
+#: search.php:23
+msgid "Etiketler: "
+msgstr ""
+
+#: search.php:23
+msgid "Kategori:"
+msgstr ""
+
+#: search.php:35
+msgid "Aradığınız ifadeyi içeren hiç yazı bulunamadı."
+msgstr ""

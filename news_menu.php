@@ -2,13 +2,13 @@
   <select name="archive-dropdown" style="float: right; margin: 5px 10px;"
     onChange='document.location.href=this.options[this.selectedIndex].value;'>
     <option value="">
-      <?php echo attribute_escape('Haber Arşivi'); ?>
+      <?php esc_html_e( 'Haber Arşivi', 'linux-wp-theme' ); ?>
     </option>
     <?php wp_get_archives('type=monthly&format=option&show_post_count=1'); ?>
   </select>
-  <h2 class="content-news">Haberler</h2>
+  <h2 class="content-news"><?php esc_html_e( 'Haberler', 'linux-wp-theme' ); ?></h2>
   <p>
-    <a href="/yeni-haber-girisi">Yeni Haber Gir</a>
-    <a href="/haberler">Tüm Haberleri Gör</a>
+    <a href="/yeni-haber-girisi"><?php esc_html_e( 'Yeni Haber Gir', 'linux-wp-theme' ); ?></a>
+    <a href="/haberler"><?php esc_html_e( 'Tüm Haberleri Gör', 'linux-wp-theme' ); ?></a>
   </p>
 </div>
