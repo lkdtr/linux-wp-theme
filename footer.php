@@ -1,7 +1,7 @@
 <div class="wrapper" id="footer">
   <p class="left">
-    <a href='https://www.mozilla.org/firefox/'><img src='<?php bloginfo( 'template_url' ); ?>/images/download-firefox.png' alt='Daha İyi Bir Web Deneyimi İçin Firefox Kullanın'></a>
-    <a href='https://www.wordpress.org/'><img src='<?php bloginfo( 'template_url' ); ?>/images/wp-logo.png' alt='Site Alt Yapısı Olarak WordPress Kullanılmaktadır.'></a>
+    <a href='https://www.mozilla.org/firefox/'><img src='<?php bloginfo( 'template_url' ); ?>/images/download-firefox.png' alt='<?php esc_attr_e( 'Daha İyi Bir Web Deneyimi İçin Firefox Kullanın', 'linux-wp-theme' ); ?>'></a>
+    <a href='https://www.wordpress.org/'><img src='<?php bloginfo( 'template_url' ); ?>/images/wp-logo.png' alt='<?php esc_attr_e( 'Site Alt Yapısı Olarak WordPress Kullanılmaktadır.', 'linux-wp-theme' ); ?>'></a>
   </p>
   <span><a href="<?php bloginfo( 'siteurl' ); ?>/gpl">GPL</a></span>
   <?php
@@ -12,3 +12,7 @@
     endif;
   ?>
 </div>
+
+<?php wp_footer(); ?>
+</body>
+</html>

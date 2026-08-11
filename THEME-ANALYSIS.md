@@ -14,9 +14,9 @@ Tarih: 2026-08-10
 
 ```
 ├── css/                 (main.css, menu.css, blocks.css, editor.css, comments.css, news.css, rtl.css)
-├── javascript/          (buttons.js, menu.js, jquery-1.4.2.min.js)
+├── javascript/          (buttons.js)
 ├── images/
-├── cache/
+├── languages/           (linux-wp-theme.pot)
 ├── style.css            (tema header)
 ├── functions.php        (ana tema fonksiyonları)
 ├── header.php / footer.php
@@ -24,8 +24,7 @@ Tarih: 2026-08-10
 ├── comments.php / comments-popup.php
 ├── menu.php / news_menu.php
 ├── sidebar.php / bottom_area.php
-├── news.php / news_inc.php / image.php / links.php / archives.php
-└── simplepie.class.php   (RSS parser kütüphanesi)
+└── news.php / image.php / links.php / archives.php
 ```
 
 Template-parts klasörü yok; parçalar doğrudan `include`/`get_template_part` benzeri include ile çağrılıyor.
@@ -33,10 +32,15 @@ Template-parts klasörü yok; parçalar doğrudan `include`/`get_template_part` 
 ## 3. functions.php Özeti
 
 - `add_theme_support`: title-tag, html5, automatic-feed-links, align-wide, wp-block-styles,
-  responsive-embeds, editor-styles, menus
+  responsive-embeds, editor-styles, menus, post-thumbnails (120×120, `linux-entry-thumb`)
 - `wp_enqueue_scripts` ile jQuery, `javascript/buttons.js`, `css/blocks.css` yükleniyor
-- İki widget alanı: `sidebar-1` (ana sayfa), `sidebar-2` (footer)
+- İki widget alanı: `sidebar-1` (şu an hiçbir şablonda gösterilmiyor), `sidebar-2` (footer,
+  `bottom_area.php` üzerinden)
 - İki menü konumu: `menu` (TR), `menu_en` (EN)
+- `load_theme_textdomain( 'linux-wp-theme', .../languages )`; `style.css`'de `Text Domain`/
+  `Domain Path` başlıkları tanımlı
+- `links.php`'nin kullandığı `wp_list_bookmarks()` çalışabilsin diye
+  `pre_option_link_manager_enabled` filtresiyle Bağlantı Yöneticisi yeniden etkinleştirilmiş
 - Customizer, ACF entegrasyonu yok
 
 ## 4. Template Dosyaları
@@ -49,8 +53,10 @@ Template-parts klasörü yok; parçalar doğrudan `include`/`get_template_part` 
 | single.php | Tekil yazı, news_menu include |
 | page.php | Basit sayfa şablonu |
 | archive.php | Kategori/etiket/yazar/tarih arşivleri, dinamik başlık |
-| search.php | Arama sonuçları, eski yapı |
+| search.php | Arama sonuçları |
 | 404.php | Basit hata sayfası |
+| archives.php | `Template Name: Arşivler` — aylık/kategori arşiv listesi (sayfa şablonu olarak atanabilir) |
+| links.php | `Template Name: Bağlantılar` — `wp_list_bookmarks()` (sayfa şablonu olarak atanabilir) |
 
 ## 5. CSS/JS Mimarisi
 
@@ -58,7 +64,6 @@ Template-parts klasörü yok; parçalar doğrudan `include`/`get_template_part` 
 - `css/main.css`: CSS variables, flexbox layout, responsive
 - `css/menu.css`: mobil menü düzeltmeleri (flex-wrap, dropdown position)
 - `css/blocks.css`, `css/editor.css`: Gutenberg desteği
-- `javascript/jquery-1.4.2.min.js`: 2012 tarihli, kullanılmıyor (WP jQuery yükleniyor), gereksiz
 
 ## 6. Son Commit Geçmişi (özet)
 
@@ -71,27 +76,13 @@ Template-parts klasörü yok; parçalar doğrudan `include`/`get_template_part` 
 - feat: Gutenberg blok desteği ekle
 - modernize: HTML5, CSS variables, flexbox, wp_enqueue_scripts
 
-## 7. Kritik Sorunlar
+## 7. Diğer Gözlemler
 
-1. **Email header injection (`bottom_area.php`)** — `$_POST['email']` doğrudan `mail()` header'ına
-   yazılıyor, nonce/CSRF koruması ve `sanitize_email()` kullanımı yok.
-2. **Deprecated WordPress fonksiyonları:**
-   - `query_posts()` → `news.php` (yerine `WP_Query`)
-   - `get_userdatabylogin()` → `archive.php` (yerine `get_user_by()`)
-   - `attribute_escape()` → `news_menu.php` (yerine `esc_attr()`)
-3. **Sanitize edilmeyen input:** `$_GET['paged']` (archive.php), `$_SERVER` değerleri (news.php `curPageURL()`)
-4. **Gereksiz eski dosya:** `javascript/jquery-1.4.2.min.js` (kullanılmıyor)
-5. **i18n eksik:** Metinler hardcoded Türkçe, `.pot` dosyası yok
-
-## 8. Diğer Gözlemler
-
-- Genel olarak `esc_html`, `get_option`, `bloginfo`, `wp_nav_menu`, `dynamic_sidebar` gibi güvenli
-  WP API'leri doğru kullanılmış.
+- Genel olarak `esc_html`, `esc_attr`, `esc_url`, `get_option`, `bloginfo`, `wp_nav_menu`,
+  `dynamic_sidebar` gibi güvenli WP API'leri doğru kullanılıyor.
+- Tüm kullanıcıya görünür metinler `linux-wp-theme` text domain'i ile `__()`/`_e()`/
+  `esc_html__()`/`esc_attr__()` üzerinden geçiriliyor; `languages/linux-wp-theme.pot` şablonu
+  mevcut.
 - Accessibility: dropdown menüler `:focus-within` kullanıyor (eski tarayıcı desteği yok),
   bazı butonlar `<a>` etiketiyle yapılmış.
-- Performans: CSS variables + flexbox modern ve hafif; `simplepie.class.php` (~380KB) tema
-  içinde gömülü.
-
-## 9. Yapılan Düzeltmeler
-
-Bu bölüm, kritik sorunlar çözüldükçe güncellenecektir.
+- Performans: CSS variables + flexbox modern ve hafif.

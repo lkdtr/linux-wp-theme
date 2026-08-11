@@ -212,6 +212,35 @@ span.news_description {
     border-top-color: var(--color-footer-border);
 }
 
+/* Anasayfa yazı listesindeki küçük öne çıkan görsel */
+.entry-thumb {
+    float: left;
+    margin: 0 12px 6px 0;
+    line-height: 0;
+}
+
+.entry-thumb img {
+    display: block;
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: var(--radius);
+    border: 1px solid var(--color-border);
+}
+
+@media (max-width: 480px) {
+    .entry-thumb {
+        float: none;
+        margin: 0 0 10px;
+    }
+
+    .entry-thumb img {
+        width: 100%;
+        height: auto;
+        max-height: 200px;
+    }
+}
+
 /*
  * Normal yazı görselleri içerik sütununu tamamen kaplamasın. Editörde
  * "Geniş" veya "Tam genişlik" seçilen görseller kendi hizalama kurallarını
